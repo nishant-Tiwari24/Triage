@@ -83,56 +83,211 @@ def sample_info():
     }
     return json.dumps(json_data[1])
 
+
 @app.route("/all-sample", methods=['GET', 'POST'])
 def all_sample():
-    files = {
-    "files": [
-        { "id": 1, "path": "sample.raw/fs0/$AttrDef", "name": "$AttrDef" },
-        { "id": 2, "path": "sample.raw/fs0/$BadClus", "name": "$BadClus" },
-        { "id": 3, "path": "sample.raw/fs0/$Bitmap", "name": "$Bitmap" },
-        { "id": 4, "path": "sample.raw/fs0/$Boot", "name": "$Boot" },
-        { "id": 5, "path": "sample.raw/fs0/$Extend", "name": "$Extend" },
-        { "id": 6, "path": "sample.raw/fs0/$Extend/$Deleted", "name": "$Deleted" },
-        { "id": 7, "path": "sample.raw/fs0/$Extend/$ObjId", "name": "$ObjId" },
-        { "id": 8, "path": "sample.raw/fs0/$Extend/$Quota", "name": "$Quota" },
-        { "id": 9, "path": "sample.raw/fs0/$Extend/$Reparse", "name": "$Reparse" },
-        { "id": 10, "path": "sample.raw/fs0/$Extend/$RmMetadata", "name": "$RmMetadata" },
-        { "id": 11, "path": "sample.raw/fs0/$Extend/$RmMetadata/$Repair", "name": "$Repair" },
-        { "id": 12, "path": "sample.raw/fs0/$Extend/$RmMetadata/$Txf", "name": "$Txf" },
-        { "id": 13, "path": "sample.raw/fs0/$Extend/$RmMetadata/$TxfLog", "name": "$TxfLog" },
-        { "id": 14, "path": "sample.raw/fs0/$Extend/$RmMetadata/$TxfLog/$Tops", "name": "$Tops" },
-        { "id": 15, "path": "sample.raw/fs0/$Extend/$RmMetadata/$TxfLog/$TxfLog.blf", "name": "$TxfLog.blf" },
-        { "id": 16, "path": "sample.raw/fs0/$Extend/$RmMetadata/$TxfLog/$TxfLogContainer00000000000000000001", "name": "$TxfLogContainer00000000000000000001" },
-        { "id": 17, "path": "sample.raw/fs0/$Extend/$RmMetadata/$TxfLog/$TxfLogContainer00000000000000000002", "name": "$TxfLogContainer00000000000000000002" },
-        { "id": 18, "path": "sample.raw/fs0/$Extend/$UsnJrnl", "name": "$UsnJrnl" },
-        { "id": 19, "path": "sample.raw/fs0/$LogFile", "name": "$LogFile" },
-        { "id": 20, "path": "sample.raw/fs0/$MFT", "name": "$MFT" },
-        { "id": 21, "path": "sample.raw/fs0/$MFTMirr", "name": "$MFTMirr" },
-        { "id": 22, "path": "sample.raw/fs0/$Secure", "name": "$Secure" },
-        { "id": 23, "path": "sample.raw/fs0/$UpCase", "name": "$UpCase" },
-        { "id": 24, "path": "sample.raw/fs0/$Volume", "name": "$Volume" },
-        { "id": 25, "path": "sample.raw/fs0/Recovery", "name": "Recovery" },
-        { "id": 26, "path": "sample.raw/fs0/Recovery/WindowsRE", "name": "WindowsRE" },
-        { "id": 27, "path": "sample.raw/fs0/Recovery/WindowsRE/boot.sdi", "name": "boot.sdi" },
-        { "id": 28, "path": "sample.raw/fs0/Recovery/WindowsRE/ReAgent.xml", "name": "ReAgent.xml" },
-        { "id": 29, "path": "sample.raw/fs0/Recovery/WindowsRE/Winre.wim", "name": "Winre.wim" },
-        { "id": 30, "path": "sample.raw/fs0/System Volume Information", "name": "System Volume Information" },
-        { "id": 31, "path": "sample.raw/fs0/System Volume Information/AadRecoveryPasswordDelete", "name": "AadRecoveryPasswordDelete" },
-        { "id": 32, "path": "sample.raw/fs0/System Volume Information/ClientRecoveryPasswordRotation", "name": "ClientRecoveryPasswordRotation" },
-        { "id": 33, "path": "sample.raw/fs0/System Volume Information/FveDecryptedVolumeFolder", "name": "FveDecryptedVolumeFolder" },
-        { "id": 34, "path": "sample.raw/fs0/System Volume Information/SPP", "name": "SPP" },
-        { "id": 35, "path": "sample.raw/fs0/System Volume Information/SPP/metadata-2", "name": "metadata-2" },
-        { "id": 36, "path": "sample.raw/fs0/System Volume Information/SPP/OnlineMetadataCache", "name": "OnlineMetadataCache" },
-        { "id": 37, "path": "sample.raw/fs0/System Volume Information/SPP/OnlineMetadataCache/{5068940f-60e5-4950-bd95-601dba9c98fe}_OnDiskSnapshotProp", "name": "{5068940f-60e5-4950-bd95-601dba9c98fe}_OnDiskSnapshotProp" },
-        { "id": 38, "path": "sample.raw/fs0/System Volume Information/SPP/snapshot-2", "name": "snapshot-2" },
-        { "id": 39, "path": "sample.raw/fs0/System Volume Information/tracking.log", "name": "tracking.log" },
-        { "id": 40, "path": "sample.raw/fs0/System Volume Information/{3808876b-c176-4e48-b7ae-04046e6cc752}", "name": "{3808876b-c176-4e48-b7ae-04046e6cc752}" },
-        { "id": 41, "path": "sample.raw/fs0/System Volume Information/{a710ccbc-7032-11ef-add2-f889d212610a}{3808876b-c176-4e48-b7ae-04046e6cc752}", "name": "{a710ccbc-7032-11ef-add2-f889d212610a}{3808876b-c176-4e48-b7ae-04046e6cc752}" },
-        { "id": 42, "path": "sample.raw/fs0/$OrphanFiles", "name": "$OrphanFiles" }
-    ]
-}
+    files = [
+    {
+        "file_info": "r/r",
+        "file_id": "4-128",
+        "directory_id": "1",
+        "file_path": "sample.raw/fs0/$AttrDef",
+        "status": "readable",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "r/r",
+        "file_id": "8-128-2",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$BadClus",
+        "status": "readable",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "r/r",
+        "file_id": "6-128-4",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Bitmap",
+        "status": "readable",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "r/r",
+        "file_id": "7-128-1",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Boot",
+        "status": "readable",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "d/d",
+        "file_id": "11-144-4",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend",
+        "status": "directory",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "+ d/d",
+        "file_id": "29-144-2",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$Deleted",
+        "status": "directory",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "+ r/r",
+        "file_id": "25-144-2",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$ObjId",
+        "status": "readable",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "+ r/r",
+        "file_id": "24-144-3",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$Quota",
+        "status": "readable",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "+ r/r",
+        "file_id": "26-144-2",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$Reparse",
+        "status": "readable",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "+ d/d",
+        "file_id": "27-144-2",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$RmMetadata",
+        "status": "directory",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "++ r/r",
+        "file_id": "28-128-4",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$RmMetadata/$Repair",
+        "status": "readable",
+        "allocation": "slack space"
+    },
+    {
+        "file_info": "++ d/d",
+        "file_id": "31-144-2",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$RmMetadata/$Txf",
+        "status": "directory",
+        "allocation": "slack space"
+    },
+    {
+        "file_info": "++ r/r",
+        "file_id": "28-128-6",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$RmMetadata/$Repair",
+        "status": "readable",
+        "allocation": "slack space"
+    },
+    {
+        "file_info": "++ r/r",
+        "file_id": "28-128-8",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$RmMetadata/$Repair",
+        "status": "readable",
+        "allocation": "slack space"
+    },
+    {
+        "file_info": "+++ r/r",
+        "file_id": "32-128-2",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$RmMetadata/$TxfLog/$Tops",
+        "status": "readable",
+        "allocation": "unallocated"
+    },
+    {
+        "file_info": "+++ r/r",
+        "file_id": "34-128-1",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$RmMetadata/$TxfLog/$TxfLogContainer00000000000000000001",
+        "status": "readable",
+        "allocation": "unallocated"
+    },
+    {
+        "file_info": "+ r/r",
+        "file_id": "46-128-3",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Extend/$UsnJrnl",
+        "status": "readable",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "r/r",
+        "file_id": "0-128-6",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$MFT",
+        "status": "readable",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "r/r",
+        "file_id": "9-128-8",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/$Secure",
+        "status": "readable",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "d/d ",
+        "file_id": "36-144-1",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/Recovery",
+        "status": "directory",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "++ r/r",
+        "file_id": "38-128-1",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/Recovery/WindowsRE/Winre.wim",
+        "status": "readable",
+        "allocation": "slack space"
+    },
+    {
+        "file_info": "+ d/d ",
+        "file_id": "44-144-1",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/System Volume Information/FveDecryptedVolumeFolder",
+        "status": "directory",
+        "allocation": "allocated"
+    },
+    {
+        "file_info": "++ r/r",
+        "file_id": "49-128-3",
+        "directory_id": "",
+        "file_path": "sample.raw/fs0/System Volume Information/SPP/snapshot-2",
+        "status": "readable",
+        "allocation": "slack space"
+    }
+]
 
-    return json.dumps(files) 
+
+    if request.method == 'GET':
+        return json.dumps(files), 200
+
+    elif request.method == 'POST':
+        try:
+            data = request.get_json()
+            if not data:
+                return json.dumps({"error": "No data provided"}), 400
+            return json.dumps({"message": "POST request received", "data": data}), 200
+        except Exception as e:
+            return json.dumps({"error": str(e)}), 500
+
+    return json.dumps({"error": "Method not allowed"}), 405
+
 
 @app.route("/img_info", methods=['GET', 'POST'])
 def img_info():
