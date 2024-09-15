@@ -162,6 +162,60 @@ def img_info():
 
     return json.dumps(img_info)
 
+@app.route("/mft-entry", methods=['GET'])
+def mft_entry():
+    mft_data = {
+        "Entry": 40,
+        "Sequence": 1,
+        "$LogFile_Sequence_Number": 10513241,
+        "Allocated_File": True,
+        "Links": 1,
+        "$STANDARD_INFORMATION": {
+            "Flags": ["Hidden", "System", "Not Content Indexed"],
+            "Owner_ID": 0,
+            "Security_ID": "263 (S-1-5-32-544)",
+            "Created": "2024-08-20T09:47:30.433150900+05:30",
+            "File_Modified": "2024-08-20T09:47:30.433150900+05:30",
+            "MFT_Modified": "2024-08-20T09:47:30.433150900+05:30",
+            "Accessed": "2024-09-12T02:58:40.738497100+05:30"
+        },
+        "$FILE_NAME": {
+            "Flags": ["Archive", "Not Content Indexed"],
+            "Name": "ReAgent.xml",
+            "Parent_MFT_Entry": 37,
+            "Sequence": 1,
+            "Allocated_Size": 0,
+            "Actual_Size": 0,
+            "Created": "2024-08-20T09:47:30.433150900+05:30",
+            "File_Modified": "2024-08-20T09:47:30.433150900+05:30",
+            "MFT_Modified": "2024-08-20T09:47:30.433150900+05:30",
+            "Accessed": "2024-08-20T09:47:30.433150900+05:30"
+        },
+        "Attributes": [
+            {
+                "Type": "$STANDARD_INFORMATION",
+                "Name": "N/A",
+                "Resident": True,
+                "Size": 72
+            },
+            {
+                "Type": "$FILE_NAME",
+                "Name": "N/A",
+                "Resident": True,
+                "Size": 88
+            },
+            {
+                "Type": "$DATA",
+                "Name": "N/A",
+                "Non_Resident": True,
+                "Size": 1070,
+                "init_size": 1070
+            }
+        ]
+    }
+    
+    return mft_data
 
 if __name__ == '__main__':
     app.run(debug=True)
+
