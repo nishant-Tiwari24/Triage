@@ -21,6 +21,8 @@ const Sidebar = () => {
     { id: 2, titles: 'Partition Table', icon: DatabaseIcon },
     { id: 3, titles: 'Image Information', icon: PackageIcon },
     { id: 4, titles: 'Meta Information', icon: PackageOpenIcon },
+    { id: 5, titles: 'System logs', icon: PackageOpenIcon },
+
   ];
 
   const handleMenuItemClick = (id) => {

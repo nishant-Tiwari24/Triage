@@ -371,6 +371,165 @@ def mft_entry():
     
     return mft_data
 
+@app.route("/system-logs", methods=['GET'])
+def SystemLogs():
+    data=[
+    {
+        "time": "Mon May 13 01:19:30 2024",
+        "message": ["0x0", "10", "0", "10", "storqosflt", "2039-04-22T07:06:38.0000000Z"]
+    },
+    {
+        "time": "Mon May 13 01:19:30 2024",
+        "message": ["0x0", "10", "0", "7", "bindflt", "2032-10-20T06:52:30.0000000Z"]
+    },
+    {
+        "time": "Mon May 13 01:19:32 2024",
+        "message": ["0", "2", "0", "PCIe", "SSD", "512110190592", "KBG40ZNV512G KIOXIA"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["http://*:5357/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["http://+:80/Temporary_Listen_Addresses/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["https://*:5358/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["https://+:3392/rdp/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["http://+:3387/rdp/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["https://+:443/sra_{BA195980-CD49-458b-9E23-C84EE0ADCD75}/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["http://+:10246/MDEServer/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["https://+:5986/wsman/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["http://+:47001/wsman/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["http://+:5985/wsman/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["http://+:10247/apps/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["http://*:2869/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["https://+:10245/WMPNSSv4/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:31 2024",
+        "message": ["http://+:10243/WMPNSSv4/", "0", "4", "", "S-1-5-18"]
+    },
+    {
+        "time": "Mon May 13 01:19:32 2024",
+        "message": ""
+    },
+    {
+        "time": "Mon May 13 01:19:32 2024",
+        "message": ["C:\\Windows\\System32\\DriverStore\\FileRepository\\dptf_cpu.inf_amd64_897ea327b3fe52f7\\esif_uf.exe", "4104", "{381b4222-f694-41f0-9685-ff5bb260df2e}", "{381b4222-f694-41f0-9685-ff5bb260df2e}"]
+    },
+    {
+        "time": "Mon May 13 01:19:32 2024",
+        "message": ["C:\\Windows\\System32\\DriverStore\\FileRepository\\dptf_cpu.inf_amd64_897ea327b3fe52f7\\esif_uf.exe", "4104", "{381b4222-f694-41f0-9685-ff5bb260df2e}", "{381b4222-f694-41f0-9685-ff5bb260df2e}"]
+    },
+    {
+        "time": "Mon May 13 01:19:33 2024",
+        "message": ["mfevtp"]
+    },
+    {
+        "time": "Mon May 13 01:19:32 2024",
+        "message": ["VMICTimeProvider"]
+    },
+    {
+        "time": "Mon May 13 01:19:32 2024",
+        "message": ["No such host is known. (0x80072AF9)", "15", "time.windows.com,0x9"]
+    },
+    {
+        "time": "Mon May 13 01:19:34 2024",
+        "message": ["mfefire"]
+    },
+    {
+        "time": "Mon May 13 01:19:34 2024",
+        "message": ["protectedmodulehostservice"]
+    },
+    {
+        "time": "Mon May 13 01:19:34 2024",
+        "message": ["mcbootdelaystartsvc"]
+    },
+    {
+        "time": "Mon May 13 01:19:34 2024",
+        "message": ["mmscom"]
+    },
+    {
+        "time": "Mon May 13 01:19:34 2024",
+        "message": ["No such host is known. (0x80072AF9)", "15", "time.windows.com,0x9"]
+    },
+    {
+        "time": "Mon May 13 01:19:38 2024",
+        "message": ["156", "\\??\\C:\\ProgramData\\Microsoft\\Windows\\WindowsApps\\MicrosoftCorporationII.WindowsSubsystemForLinux_2.1.5.0_x64__8wekyb3d8bbwe\\Cache\\f60e0bc25b53120f_COM15.dat", "1", "1"]
+    },
+    {
+        "time": "Mon May 13 01:19:39 2024",
+        "message": ["", "Filter pause start"]
+    },
+    {
+        "time": "Mon May 13 01:19:39 2024",
+        "message": ["", "Filter pause complete"]
+    },
+    {
+        "time": "Mon May 13 01:19:39 2024",
+        "message": ["", "Filter detach start"]
+    },
+    {
+        "time": "Mon May 13 01:19:39 2024",
+        "message": ["", "Filter detach complete"]
+    },
+    {
+        "time": "Mon May 13 01:19:39 2024",
+        "message": ["1", "S-1-5-21-1154311893-163028936-1993660432-1001"]
+    },
+    {
+        "time": "Mon May 13 01:19:40 2024",
+        "message": ["29", "\\??\\C:\\Users\\daved\\ntuser.dat", "6688768", "6008832"]
+    },
+    {
+        "time": "Mon May 13 01:19:40 2024",
+        "message": ["63", "\\??\\C:\\Users\\daved\\AppData\\Local\\Microsoft\\Windows\\UsrClass.dat", "15021", "1281"]
+    },
+    {
+        "time": "Mon May 13 01:19:40 2024",
+        "message": ["36", "790E58B4-7939-4434-9358-89AE7DDBE87E", "36", "790E58B4-7939-4434-9358-89AE7DDBE87E"]
+    },
+    {
+        "time": "Mon May 13 01:19:40 2024",
+        "message": ["36", "790E58B4-7939-4434-9358-89AE7DDBE87E", "36", "790E58B4-7939-4434-9358-89AE7DDBE87E"]
+    }
+    ]
+    print(data)
+    return data
+
 if __name__ == '__main__':
     app.run(debug=True)
 

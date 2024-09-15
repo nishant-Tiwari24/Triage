@@ -7,6 +7,7 @@ import AllFileData from "./components/fileData/AllFileData";
 import PartitionTable from "./components/partition/PartitionTable";
 import SampleInfo from "./components/sample/ImageInfo";
 import MetadataTable from "./components/metadata/MetaData";
+import Logs from "./components/logs/Logs";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
         <Route path="/upload" element={<Upload />} />
         <Route path="/disk-file-data" element={<AllFileData />} />
+        <Route path="/system-logs" element={<Logs />} />
         <Route path="/partition-table" element={<PartitionTable />} />
         <Route path="/sample-info" element={<SampleInfo />} />
         <Route path="/meta-data" element={<MetadataTable />} />
