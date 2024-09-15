@@ -1,5 +1,6 @@
 import video1 from "../assets/video1.mp4";
 import video2 from "../assets/video2.mp4";
+import {Link} from "react-router-dom";
 
 const HeroSection = () => {
   return (
@@ -9,7 +10,9 @@ const HeroSection = () => {
 
         <span className="bg-gradient-to-r from-blue-500 to-blue-800 text-transparent bg-clip-text">
           {" "}
+          {/* <Link to="/"> */}
           Cyber Incidents
+          {/* </Link> */}
         </span>
       </h1>
       <p className="mt-10 text-lg text-center text-neutral-500 max-w-4xl">

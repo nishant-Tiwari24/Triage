@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../layout/Sidebar';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const AllFileData = () => {
     const [data, setData] = useState([]);
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchData = async () => {
@@ -17,6 +19,10 @@ const AllFileData = () => {
 
         fetchData();
     }, []);
+
+    const handlesampleData = () => {  
+        navigate('/sample-info');
+    }
 
     return (
         <div className="flex min-h-screen bg-zinc-900 text-white">
@@ -40,7 +46,7 @@ const AllFileData = () => {
                             </thead>
                             <tbody>
                                 {data.map((file) => (
-                                    <tr key={file.id} className="hover:bg-zinc-800">
+                                    <tr key={file.id} className="hover:bg-zinc-800" onClick={handlesampleData}>
                                         <td className="px-4 py-2 text-white">
                                             <strong className='text-lime-600'>{file.id}. {file.name}</strong> 
                                         </td>

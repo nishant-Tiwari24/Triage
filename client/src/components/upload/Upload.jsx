@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { InboxIcon, CheckCircleIcon } from 'lucide-react';
+import { redirect } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Upload = () => {
   const [file, setFile] = useState(null);
+  const navigate = useNavigate();
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files.length > 0) {
@@ -14,7 +17,9 @@ const Upload = () => {
     if (file) {
       console.log('Uploading:', file);
     }
+    navigate('/partition-table');
   };
+  
 //TODO: Add the types of files that can be uploaded
   return (
     <div className="flex flex-col items-center justify-center py-16">
@@ -39,7 +44,7 @@ const Upload = () => {
         <button
           onClick={handleUploadClick}
           className="bg-zinc-700 hover:bg-zinc-600 text-white py-2 px-4 rounded-lg transition text-sm duration-300 ease-in-out disabled:opacity-50"
-          disabled={!file}
+          // disabled={!file}
         >
           Upload Your Disk Image
         </button>

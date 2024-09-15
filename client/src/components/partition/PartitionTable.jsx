@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Sidebar from '../layout/Sidebar';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const PartitionTable = () => {
     const [partitionData, setPartitionData] = useState(null);
     const [imgInfoData, setImgInfoData] = useState(null);
+    const navigate = useNavigate();
 
     useEffect(() => {
         // Fetch partition data
@@ -30,6 +32,11 @@ const PartitionTable = () => {
         fetchPartitionData();
         fetchImgInfo();
     }, []);
+
+    const HandlepartData = () => {
+        navigate('/disk-file-data');
+    }
+
 
     return (
         <div className="flex min-h-screen bg-zinc-900 text-white">
@@ -74,7 +81,7 @@ const PartitionTable = () => {
                             </thead>
                             <tbody>
                                 {partitionData.partitions.map((partition, index) => (
-                                    <tr key={index} className="hover:bg-zinc-800">
+                                    <tr key={index} className="hover:bg-zinc-800" onClick={HandlepartData}>
                                         <td className="px-2 py-2 text-white">{partition.slot}</td>
                                         <td className="px-2 py-2 text-gray-300">{partition.start}</td>
                                         <td className="px-2 py-2 text-gray-300">{partition.end}</td>

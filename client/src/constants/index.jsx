@@ -13,8 +13,8 @@ import user5 from "../assets/profile-pictures/user5.jpg";
 import user6 from "../assets/profile-pictures/user6.jpg";
 
 export const navItems = [
-  { label: "Data Automation", href: "#" },
-  { label: "Dashboard", href: "#" },
+  { label: "Data Automation", href: "/upload" },
+  { label: "Dashboard", href: "/partition-table" },
   { label: "Data Analysis", href: "#" },
   { label: "IOC Detection", href: "#" },
 ];
