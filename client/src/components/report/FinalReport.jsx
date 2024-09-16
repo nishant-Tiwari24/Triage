@@ -147,6 +147,8 @@ This report provides a detailed analysis of various data segments, including par
 The system appears mostly intact, but several areas, such as unallocated partitions, elevated network services, and core recovery files, should be closely monitored. Recommendations provided aim to mitigate any potential risks and ensure continued system security and stability.
 `;
 
+const storeInIpfs = async () => {};
+
 const Report = () => {
   return (
     <div className="p-8 bg-zinc-900 border border-zinc-800 mt-10 font-sans text-gray-200 min-h-screen max-w-7xl mx-auto flex flex-col justify-center space-y-4">
@@ -201,6 +203,12 @@ const Report = () => {
           ),
         }}
       />
+      <button
+        onClick={storeInIpfs}
+        className="fixed right-10 bottom-10 px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded shadow-lg"
+      >
+        Store it in IPFS
+      </button>
     </div>
   );
 };
