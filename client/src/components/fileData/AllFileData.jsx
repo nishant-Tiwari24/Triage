@@ -36,10 +36,9 @@ const AllFileData = () => {
   };
 
   const extractIdAndName = (fileInfo) => {
-    // Extract ID and Name from file_info (e.g., "r/r 4-128-1: $AttrDef")
     const parts = fileInfo.split(":");
-    const id = parts[0]?.trim(); // e.g., "r/r 4-128-1"
-    const name = parts[1]?.trim(); // e.g., "$AttrDef"
+    const id = parts[0]?.trim();
+    const name = parts[1]?.trim();
     return { id, name };
   };
 
