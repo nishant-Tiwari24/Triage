@@ -8,6 +8,7 @@ import PartitionTable from "./components/partition/PartitionTable";
 import SampleInfo from "./components/sample/ImageInfo";
 import MetadataTable from "./components/metadata/MetaData";
 import Logs from "./components/logs/Logs";
+import Analysis from "./components/analysis/Analysis";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/partition-table" element={<PartitionTable />} />
         <Route path="/sample-info" element={<SampleInfo />} />
         <Route path="/meta-data" element={<MetadataTable />} />
+        <Route path="/analysis" element={<Analysis />} />
       </Routes>
       <Footer />
     </>

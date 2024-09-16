@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Sidebar from "../layout/Sidebar";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const MetadataTable = () => {
   const [metaData, setMetaData] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMetaData = async () => {
@@ -17,14 +19,35 @@ const MetadataTable = () => {
     fetchMetaData();
   }, []);
 
+  // Function to handle navigation based on button click
+  const handleNavigation = (route) => {
+    navigate(route);
+  };
+
   return (
     <div className="flex min-h-screen bg-zinc-900 text-white">
       <div className="w-[300px]">
         <Sidebar />
       </div>
 
-      <div className="flex-grow p-8">
+      <div className="flex-grow p-8 relative">
         <h1 className="text-2xl font-normal mb-6">Metadata Information ⚙️</h1>
+
+        {/* Button to navigate to Sample Info and Meta Data */}
+        <div className="absolute top-6 right-6 space-x-4">
+          <button
+            className="bg-lime-600 text-white px-4 py-2 rounded-md hover:bg-lime-500"
+            onClick={() => handleNavigation("/sample-info")}
+          >
+            Info
+          </button>
+          <button
+            className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-500"
+            onClick={() => handleNavigation("/meta-data")}
+          >
+            Meta Data
+          </button>
+        </div>
 
         {metaData ? (
           <div>
