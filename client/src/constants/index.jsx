@@ -16,7 +16,7 @@ export const navItems = [
   { label: "Data Automation", href: "/upload" },
   { label: "Dashboard", href: "/partition-table" },
   { label: "Data Analysis", href: "#" },
-  { label: "IOC Detection", href: "#" },
+  { label: "Generate Final Report", href: "/report" },
 ];
 
 export const testimonials = [

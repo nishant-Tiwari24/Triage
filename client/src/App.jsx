@@ -9,6 +9,7 @@ import SampleInfo from "./components/sample/ImageInfo";
 import MetadataTable from "./components/metadata/MetaData";
 import Logs from "./components/logs/Logs";
 import Analysis from "./components/analysis/Analysis";
+import Report from "./components/report/FinalReport";
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/sample-info" element={<SampleInfo />} />
         <Route path="/meta-data" element={<MetadataTable />} />
         <Route path="/analysis" element={<Analysis />} />
+        <Route path="/report" element={<Report />} />
       </Routes>
       <Footer />
     </>
