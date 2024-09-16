@@ -14,8 +14,8 @@ const AllFileData = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get("http://127.0.0.1:5000/all-sample");
-        setData(response.data); // Adjusted based on the new API response
-        setSortedData(response.data); // Initialize sorted data
+        setData(response.data);
+        setSortedData(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
